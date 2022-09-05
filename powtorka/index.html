@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Dawid Miozga">
+    <title>Daty</title>
+    <link rel='stylesheet' href='main.css'>
+    
+</head>
+<style>
+
+
+</style>
+
+
+    <header>
+<h1>Zdarzenia w js</h1>
+    </header>
+    <article>
+        <p id="menu">Menu zdarzeń</p>
+    <ul>
+        <li><a href="#click_nazwa">Click</a></li>
+        <li><a href="#dblclick_nazwa">dblclick</a></li>
+        <li><a href="#mouseover_nazwa">mousoever</a></li>
+        <li><a href="#mouseup_nazwa">mouseup</a></li>
+        <li><a href="#mousedown_nazwa">mousedown</a></li>
+        <li><a href="#mousedown_nazwa">mousemove</a></li>
+        <li><a href="#mouseout_nazwa">mouseout</a></li>
+        <li><a href="#focus_nazwa">focus</a></li>
+        <li><a href="#blur_nazwa">blur</a></li>
+        <li><a href="#change_nazwa">change</a></li>
+    </ul>
+</article>
+<aside>
+    <a href="https://developer.mozilla.org/en-US/">Źródła</a>
+   <p>
+    Zdarzenia to czynności, które użytkownik wykonuje podczas odwiedzania naszej strony.
+    Przykładowymi zdarzeniami mogą być np. przesunięcie kursora na obrazek, kliknięcie jakiegoś
+    linka, wysłanie formularza, zaznaczenie jakiegoś obiektu, naciśnięcie klawisza itp.
+    Można zaryzykować stwierdzenie, że żaden większy skrypt nie może obejść się bez zdarzeń. To
+    właśnie one kreują tą pożądaną przez nas interaktywność...
+    Większość zdarzeń wywoływana jest przez użytkownika. Użytkownik kliknie to, użytkownik zrobi
+    tamto itp. Istnieją też zdarzenia, które nie są bezpośrednio spowodowane przez użytkownika - np.
+    zdarzenie load, które zachodzi np. gdy załaduje się strona.
+   </p>
+</aside>
+
+   <h2 id="click_nazwa">Click</h2>
+   <p>Element odbiera zdarzenie kliknięcia, gdy przycisk urządzenia wskazującego (na przykład główny przycisk myszy myszy) zostanie naciśnięty i zwolniony, gdy wskaźnik znajduje się wewnątrz elementu. Jeśli przycisk zostanie naciśnięty na jednym elemencie, a wskaźnik zostanie przesunięty poza element przed zwolnieniem przycisku, zdarzenie zostanie wywołane na najbardziej konkretnym elemencie przodka, który zawierał oba elementy.
+   Oto składnia oraz wykorzysatnie tego kodu w praktyce    
+   </p>
+   <h4>HTML</h4>
+   <p>&ltinput type="button" class="on" id="click" value="on" onclick="zmiana_click()" /&gt</p>
+   <h4>JS</h4>
+   <p>function zmiana_click(){
+    let x =document.getElementById("click")
+        if (x.className=="on")
+        {
+            x.className="off"
+            x.value = "off"
+          
+        }
+        else{
+            x.className="on"
+            x.value = "on"
+          
+        }
+    }</p>
+    <h4>Działanie kodu</h4>
+   <input type="button" class="on" id="click" value="on" onclick="zmiana_click()" />
+   <br>
+   <a href="#menu" >Powrót do menu<br></a>
+   <h2 id="dblclick_nazwa">Dblclick</h2> 
+   <p>Zdarzenie dblclick jest uruchamiane po dwukrotnym kliknięciu przycisku urządzenia wskazującego (takiego jak główny przycisk myszy); to znaczy, gdy szybko klikniesz dwa razy na pojedynczym elemencie w bardzo krótkim czasie.
+   dblclick uruchamia się po dwóch zdarzeniach kliknięcia (a co za tym idzie, po dwóch parach zdarzeń mousedown i mouseup).
+   Oto składnia oraz wykorzysatnie tego kodu w praktyce </p>
+   <h4>HTML</h4>
+   <p>&ltinput type="button" class="on" id="dblclick" value="on" ondblclick="zmiana_dblclick()" /&gt</p>
+   <h4>JS</h4>
+   <p>function zmiana_dblclick(){
+    let x =document.getElementById("dblclick")
+        if (x.className=="on")
+        {
+            x.className="off"
+            x.value = "off"
+          
+        }
+        else{
+            x.className="on"
+            x.value = "on"
+          
+        }
+    }</p>
+    <h4>Działanie kodu</h4>
+   <input type="button" class="on" id="dblclick" value="on" ondblclick="zmiana_dblclick()" />
+   <br>
+   <a href="#menu" >Powrót do menu<br></a> 
+   <h2 id="mouseover_nazwa">Mouseover</h2>
+   <p>Zdarzenie mouseover jest uruchamiane na elemencie, gdy urządzenie wskazujące (takie jak mysz lub trackpad[gładzik]) jest używane do przesuwania kursora na elemencie lub jednym z jego elementów podrzędnych.
+   Oto składnia oraz wykorzysatnie tego kodu w praktyce
+   </p>
+   <h4>HTML</h4>
+   <p>&ltinput type="button" class="on" id="mouseover" value="on" onmouseover="zmiana_mouseover()" /&gt</p>
+   <h4>JS</h4>
+   <p>function zmiana_mouseover(){
+    let x =document.getElementById("mouseover")
+        if (x.className=="on")
+            {
+                x.className="off"
+                x.value = "off"
+              
+            }
+            else{
+                x.className="on"
+                x.value = "on"
+              
+            }
+        } </p>
+        <h4>Działanie kodu</h4>
+   <input type="button" class="on" id="mouseover" value="on" onmouseover="zmiana_mouseover()" />
+   <br>
+   <a href="#menu" >Powrót do menu<br></a>
+   <h2 id="mouseup_nazwa">Mouseup</h2> 
+   <p>Zdarzenie mouseup jest uruchamiane na elemencie, gdy przycisk urządzenia wskazującego (takiego jak mysz lub trackpad[gładzik]) zostanie zwolniony, gdy wskaźnik znajduje się w nim.
+    zdarzenia mouseup są przeciwieństwem zdarzeń mousedown. 
+    Oto składnia oraz wykorzysatnie tego kodu w praktyce</p>
+    <h4>HTML</h4>
+   <p>&ltinput type="button" class="on" id="mouseup" value="on" onmouseup="zmiana_mouseup()" /&gt</p>
+   <h4>JS</h4>
+   <p>function zmiana_mouseup(){
+    let x =document.getElementById("mouseup")
+        if (x.className=="on")
+                {
+                x.className="off"
+                x.value = "off"
+                      
+                }
+                else
+                {
+                    x.className="on"
+                    x.value = "on"
+                      
+                }</p>
+                <h4>Działanie kodu</h4>
+   <input type="button" class="on" id="mouseup" value="on" onmouseup="zmiana_mouseup()" />
+   <br>
+   <a href="#menu" >Powrót do menu<br></a>
+   <h2 id="mousedown_nazwa">Mousedown</h2> 
+   <p>
+    Zdarzenie mousedown jest uruchamiane na elemencie, gdy przycisk urządzenia wskazującego zostanie naciśnięty, 
+    gdy wskaźnik znajduje się wewnątrz elementu.
+    Uwaga: różni się to od zdarzenia kliknięcia tym, że kliknięcie jest uruchamiane po wykonaniu pełnej akcji kliknięcia; 
+    oznacza to, że przycisk myszy jest wciskany i zwalniany, gdy wskaźnik pozostaje wewnątrz tego samego elementu. 
+    Mousedown jest uruchamiany w momencie pierwszego naciśnięcia przycisku.
+    Oto składnia oraz wykorzysatnie tego kodu w praktyce</p>
+    <h4>HTML</h4>
+    <p>&ltinput type="button" class="on" id="mousedown" value="on" onmousedown="zmiana_mousedown()" /&gt</p>
+    <h4>JS</h4>
+    <p>function zmiana_mousedown(){
+        let x =document.getElementById("mousedown")
+            if (x.className=="on")
+            {
+                x.className="off"
+                x.value = "off"
+              
+            }
+            else{
+                x.className="on"
+                x.value = "on"
+              
+            }
+        }</p>
+        <h4>Działanie kodu</h4>
+   <input type="button" class="on" id="mousedown" value="on" onmousedown="zmiana_mousedown()" />
+   <br>
+   <a href="#menu" >Powrót do menu<br></a>
+   <h2 id="mousemove_nazwa">Mousemove</h2>
+   <p>Zdarzenie mousemove jest wywoływane w elemencie, gdy urządzenie wskazujące (zwykle mysz) jest przesuwane, 
+    gdy znajduje się w nim punkt aktywny kursora.
+    Oto składnia oraz wykorzysatnie tego kodu w praktyce</p>
+    <h4>HTML</h4>
+    <img src="mousemove.png" alt="Mousemove">
+    <h4>JS</h4>
+    <p>let z = 0; <br/>
+    
+        function zmiana_move() {
+         document.getElementById("demo").innerHTML = z+=1;
+       }</p>
+       <h4>Działanie kodu</h4>
+   <div onmousemove="zmiana_move()">
+   <p><br> <span id="demo">Pojeździj myszką w kwadracie</span></p>
+   </div>
+   <br><br><br><br><br><br><br><br><br><br><br>
+   <a href="#menu" >Powrót do menu<br></a>
+   <h2 id="mouseout_nazwa">mouseout</h2>
+   <p>Zdarzenie mouseout jest uruchamiane na elemencie, gdy urządzenie wskazujące (zwykle mysz) jest używane do przesuwania kursora, 
+    tak aby nie był już zawarty w elemencie lub jednym z jego elementów podrzędnych.
+    Mouseout jest również dostarczany do elementu, jeśli kursor wejdzie w element potomny, 
+    ponieważ element potomny zasłania widoczny obszar elementu.
+    Oto składnia oraz wykorzysatnie tego kodu w praktyce</p>
+    <h4>HTML</h4>
+    <p>&ltinput type="button" class="on" id="mouseout" value="on" onmouseout="zmiana_mouseout()" /&gt</p>
+    <h4>JS</h4>
+    <p> function zmiana_mouseout(){
+        let x =document.getElementById("mouseout")
+            if (x.className=="on")
+            {
+                x.className="off"
+                x.value = "off"
+              
+            }
+            else{
+                x.className="on"
+                x.value = "on"
+              
+            }
+        }</p>
+        <h4>Działanie kodu</h4>
+   <input type="button" class="on" id="mouseout" value="on" onmouseout="zmiana_mouseout()" />
+   <br>
+   <a href="#menu" >Powrót do menu<br></a> 
+   <h2 id="focus_nazwa">focus</h2>
+   <p>Zdarzenie focus jest uruchamiane, gdy element został skupiony. Oto składnia oraz wykorzysatnie tego kodu w praktyce</p>
+   <h4>HTML</h4>
+   <p>&ltinput type="text" id="focus" onfocus="zmiana_focus()"&gt</p>
+   <h4>JS</h4>
+   <p>function zmiana_focus(){
+    document.getElementById("focus").style.backgroundColor = "green";}</p>
+    <h4>Działanie kodu</h4>
+   Podaj swoję imię: <input type="text" id="focus" onfocus="zmiana_focus()">
+   <br>
+   <a href="#menu" >Powrót do menu<br></a> 
+   <h2 id="blur_nazwa">blur</h2> 
+   <p>Zdarzenie blur uruchamia się, gdy element utracił skupienie. Oto składnia oraz wykorzysatnie tego kodu w praktyce</p>
+   <h4>HTML</h4>
+   <p>&ltinput type="text" id="blur" onblur="zmiana_blur()"&gt</p>
+   <h4>JS</h4>
+   <p>function zmiana_blur(){            
+    document.getElementById("blur").style.backgroundColor = "yellow";
+}</p>
+<h4>Działanie kodu</h4>
+   Podaj swoję nazwisko:<input type="text" id="blur" onblur="zmiana_blur()">
+   <br>
+   <a href="#menu" >Powrót do menu<br></a>
+   <h2 id="change_nazwa">change</h2> 
+   <p>Zdarzenie change jest wywoływane dla elementów &ltinput&gt, &ltselect&gt i &lttextarea&gt, gdy użytkownik zatwierdzi zmianę wartości 
+    elementu. W przeciwieństwie do zdarzenia input, zdarzenie change niekoniecznie jest uruchamiane dla każdej zmiany wartości 
+    elementu. Oto składnia oraz wykorzysatnie tego kodu w praktyce</p>
+    <h4>HTML</h4>
+   <p>&ltinput type="text" id="change" onchange="zmiana_change()"&gt</p>
+   <h4>JS</h4>
+   <p>function zmiana_change()
+   { document.getElementById("change").style.backgroundColor = "blue";}</p> 
+   <h4>Działanie kodu</h4>
+
+   Podaj swój wiek:<input type="text" id="change" onchange="zmiana_change()">
+   <br>
+   <a href="#menu" >Powrót do menu<br></a>
+    
+<script src="click.js"></script>
+
+<footer>Dawid Miozga 4 Ei | 2022 </footer>
+    
+    
+</body>
+</html>
